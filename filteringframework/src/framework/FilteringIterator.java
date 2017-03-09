@@ -5,7 +5,13 @@ import java.util.Iterator;
 /*
 Test: Create an Iterator filtering framework:
 (1) filteringiterator.IObjectTest interface with a single boolean myTest(Object o) method and
-(2) an implementation of Iterator (let's call it filteringiterator.FilteringIterator) which is initialized with another Iterator and an filteringiterator.IObjectTest instance: new filteringiterator.FilteringIterator(myIterator, myTest). Your filteringiterator.FilteringIterator will then allow iteration over 'myIterator', but skipping any objects which don't pass the 'myTest' myTest. Create a simple unit myTest for this framework.
+(2) an implementation of Iterator (let's call it filteringiterator.FilteringIterator) which is
+    initialized with another Iterator and an filteringiterator.IObjectTest instance:
+    new filteringiterator.FilteringIterator(myIterator, myTest).
+    Your filteringiterator.FilteringIterator will then allow iteration over 'myIterator',
+    but skipping any objects which don't pass the 'myTest' myTest.
+
+Create a simple unit myTest for this framework.
  */
 public class FilteringIterator implements Iterator<Object> {
     /**
