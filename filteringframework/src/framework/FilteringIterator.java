@@ -15,9 +15,9 @@ Create a simple unit myTest for this framework.
  */
 public class FilteringIterator implements Iterator<Object> {
     /**
-     * Keeps track of the internal iterator
+     * Keeps track of the internal iterator. Iterator type can be any subclass of Object
      */
-    private Iterator itr;
+    private Iterator<? extends Object> itr;
 
     /**
      * The filter test that is to be performed during iteration.
@@ -31,10 +31,11 @@ public class FilteringIterator implements Iterator<Object> {
 
     /**
      * Constructor to create a FilterIterator object that takes in an iterator to a collection and a test that is to be performed on the data in the collection.
-     * @param myIterator Iterator to the collection over which to iterate
-     * @param myTest Filter test that has to be perfored for each data in the collection
+     *
+     * @param myIterator Iterator to the collection over which to iterate. Iterator type can be any subclass of Object
+     * @param myTest     Filter test that has to be perfored for each data in the collection
      */
-    public FilteringIterator(Iterator myIterator, IObjectTest myTest) {
+    public FilteringIterator(Iterator<? extends Object> myIterator, IObjectTest myTest) {
         itr = myIterator;
         this.myTest = myTest;
 
@@ -45,6 +46,7 @@ public class FilteringIterator implements Iterator<Object> {
 
     /**
      * Helper method to validate if there are any more elements left in the collection.
+     *
      * @return true if there are more elements; else false and resets the nextElement
      */
     private boolean hasNextHelper() {
@@ -80,6 +82,7 @@ public class FilteringIterator implements Iterator<Object> {
 
     /**
      * Checks if there are any more valid (satisfies IObjectTest) elements left in the original iterated collection.
+     *
      * @return true if there exists a valid element that passes the test
      */
     @Override
@@ -89,6 +92,7 @@ public class FilteringIterator implements Iterator<Object> {
 
     /**
      * Returns the value of the next element that satisfies IObjectTest condition. Also moves the pointer to the next eligible element from the original collection.
+     *
      * @return the value that has passed the test
      */
     @Override
