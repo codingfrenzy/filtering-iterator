@@ -45,3 +45,11 @@ public class FilteringIteratorTest {
         displayContent("Only vowels from a list of characters", list, itr);
     }
 }
+
+/**
+ * Sample output:
+ * <p>
+ * Testing FilteringIterator:
+ * Only even numbers: 2, 4, 6,
+ * Only vowels from a list of characters: i, a, u,
+ */
